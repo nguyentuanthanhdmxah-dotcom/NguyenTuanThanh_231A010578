@@ -13,7 +13,12 @@
 <h2>📱 Phone Store</h2>
 <input type="text" id="search" placeholder="Tìm điện thoại...">
 <button onclick="toggleDark()">🌙</button>
-<div class="cart-btn" onclick="toggleCart()">🛒</div>
+
+<!-- 🛒 GIỎ HÀNG -->
+<div class="cart-btn" onclick="toggleCart()">
+🛒 <span id="count">0</span>
+</div>
+
 </header>
 
 <div class="sidebar">
@@ -30,7 +35,7 @@
 
 <div class="products" id="list"></div>
 
-<!-- MODAL CHI TIẾT (đã tối ưu) -->
+<!-- MODAL CHI TIẾT -->
 <div class="modal" id="modal">
 <div class="modal-content small">
 <span onclick="closeModal()">✖</span>
