@@ -3,20 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shop Điện Thoại</title>
+<title>Phone Store</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-<div class="menu-area">☰</div>
+<div class="menu">☰</div>
 <h2>📱 Phone Store</h2>
 <input type="text" id="search" placeholder="Tìm điện thoại...">
 <button onclick="toggleDark()">🌙</button>
 </header>
 
-<!-- MENU TRÁI -->
+<!-- MENU -->
 <div class="sidebar">
+<h3>Danh mục</h3>
 <ul>
 <li onclick="filter('all')">Trang chủ</li>
 <li onclick="filter('iphone')">iPhone</li>
@@ -27,18 +28,27 @@
 </ul>
 </div>
 
-<!-- DANH SÁCH -->
+<!-- SẢN PHẨM -->
 <div class="products" id="list"></div>
 
-<!-- MODAL CHI TIẾT -->
+<!-- MODAL -->
 <div class="modal" id="modal">
-<div class="modal-box">
+<div class="modal-content">
 <span onclick="closeModal()">✖</span>
-<img id="modalImg">
-<h3 id="modalName"></h3>
-<p id="modalPrice"></p>
-<p>Điện thoại cao cấp, hiệu năng mạnh, camera đẹp.</p>
+<img id="mImg">
+<h2 id="mName"></h2>
+<p id="mPrice"></p>
+<p id="mDesc"></p>
+<button onclick="addCart()">Thêm vào giỏ</button>
 </div>
+</div>
+
+<!-- GIỎ HÀNG -->
+<div class="cart">
+<h3>🛒 Giỏ hàng</h3>
+<div id="cart"></div>
+<p id="total"></p>
+<button onclick="checkout()">Đặt hàng</button>
 </div>
 
 <script src="script.js"></script>
