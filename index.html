@@ -7,24 +7,26 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <header>
-<button onclick="toggleMenu()">☰</button>
+<div class="menu-area">☰</div>
 <h2>📱 Phone Store</h2>
-<input type="text" id="search" placeholder="Tìm kiếm...">
+<input type="text" id="search" placeholder="Tìm điện thoại...">
 <button onclick="toggleDark()">🌙</button>
 </header>
 
-<div class="sidebar" id="menu">
+<div class="sidebar">
 <ul>
 <li onclick="filter('all')">Trang chủ</li>
 <li onclick="filter('iphone')">iPhone</li>
 <li onclick="filter('samsung')">Samsung</li>
 <li onclick="filter('xiaomi')">Xiaomi</li>
+<li onclick="filter('oppo')">Oppo</li>
+<li onclick="filter('vivo')">Vivo</li>
 </ul>
 </div>
 
 <div class="products" id="list"></div>
-
 <div class="cart" id="cart"></div>
 
 <script src="script.js"></script>
