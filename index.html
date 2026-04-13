@@ -16,7 +16,6 @@
 <div class="cart-btn" onclick="toggleCart()">🛒</div>
 </header>
 
-<!-- MENU -->
 <div class="sidebar">
 <h3>Danh mục</h3>
 <ul>
@@ -29,22 +28,21 @@
 </ul>
 </div>
 
-<!-- SẢN PHẨM -->
 <div class="products" id="list"></div>
 
-<!-- MODAL CHI TIẾT -->
+<!-- MODAL CHI TIẾT (đã tối ưu) -->
 <div class="modal" id="modal">
-<div class="modal-content">
+<div class="modal-content small">
 <span onclick="closeModal()">✖</span>
 <img id="mImg">
-<h2 id="mName"></h2>
+<h3 id="mName"></h3>
 <p id="mPrice"></p>
 <div id="mDesc"></div>
 <button onclick="addCart()">Thêm vào giỏ</button>
 </div>
 </div>
 
-<!-- GIỎ HÀNG POPUP -->
+<!-- GIỎ HÀNG -->
 <div class="modal" id="cartModal">
 <div class="modal-content">
 <span onclick="closeCart()">✖</span>
@@ -55,7 +53,7 @@
 </div>
 </div>
 
-<!-- FORM ĐẶT HÀNG -->
+<!-- FORM -->
 <div class="modal" id="orderModal">
 <div class="modal-content">
 <h3>Thông tin đặt hàng</h3>
