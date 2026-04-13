@@ -13,6 +13,7 @@
 <h2>📱 Phone Store</h2>
 <input type="text" id="search" placeholder="Tìm điện thoại...">
 <button onclick="toggleDark()">🌙</button>
+<div class="cart-btn" onclick="toggleCart()">🛒</div>
 </header>
 
 <!-- MENU -->
@@ -57,7 +58,7 @@
 </div>
 
 <!-- GIỎ HÀNG -->
-<div class="cart">
+<div class="cart" id="cartBox">
 <h3>🛒 Giỏ hàng</h3>
 <div id="cart"></div>
 <p id="total"></p>
