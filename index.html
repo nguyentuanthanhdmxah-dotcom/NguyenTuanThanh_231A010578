@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop Điện Thoại</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<button onclick="toggleMenu()">☰</button>
+<h2>📱 Phone Store</h2>
+<input type="text" id="search" placeholder="Tìm kiếm...">
+<button onclick="toggleDark()">🌙</button>
+</header>
+
+<div class="sidebar" id="menu">
+<ul>
+<li onclick="filter('all')">Trang chủ</li>
+<li onclick="filter('iphone')">iPhone</li>
+<li onclick="filter('samsung')">Samsung</li>
+<li onclick="filter('xiaomi')">Xiaomi</li>
+</ul>
+</div>
+
+<div class="products" id="list"></div>
+
+<div class="cart" id="cart"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
