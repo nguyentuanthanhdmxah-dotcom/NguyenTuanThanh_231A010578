@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Phone Store</title>
+<title>Shop Điện Thoại</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,24 +15,20 @@
 <button onclick="toggleDark()">🌙</button>
 </header>
 
+<!-- MENU TRÁI -->
 <div class="sidebar">
 <ul>
 <li onclick="filter('all')">Trang chủ</li>
 <li onclick="filter('iphone')">iPhone</li>
 <li onclick="filter('samsung')">Samsung</li>
 <li onclick="filter('xiaomi')">Xiaomi</li>
+<li onclick="filter('oppo')">Oppo</li>
+<li onclick="filter('vivo')">Vivo</li>
 </ul>
 </div>
 
+<!-- DANH SÁCH -->
 <div class="products" id="list"></div>
-
-<!-- GIỎ HÀNG -->
-<div class="cart" id="cart">
-<h3>🛒 Giỏ hàng</h3>
-<div id="cartItems"></div>
-<p id="total"></p>
-<button onclick="checkout()">Đặt hàng</button>
-</div>
 
 <!-- MODAL CHI TIẾT -->
 <div class="modal" id="modal">
@@ -41,8 +37,7 @@
 <img id="modalImg">
 <h3 id="modalName"></h3>
 <p id="modalPrice"></p>
-<p id="modalDesc"></p>
-<button onclick="addFromDetail()">Thêm vào giỏ</button>
+<p>Điện thoại cao cấp, hiệu năng mạnh, camera đẹp.</p>
 </div>
 </div>
 
