@@ -1,65 +1,80 @@
-const data=[
-{name:"iPhone 15 Pro Max",brand:"iphone",img:"https://images.unsplash.com/photo-1695048133142-1a20484d2569",price:34990000},
-{name:"iPhone 14 Pro",brand:"iphone",img:"https://images.unsplash.com/photo-1661961112958-9b9c7b4f1b2f",price:27990000},
-{name:"Samsung S24 Ultra",brand:"samsung",img:"https://images.unsplash.com/photo-1707284959150-6f8c3baf8b3f",price:32990000},
-{name:"Samsung S23",brand:"samsung",img:"https://images.unsplash.com/photo-1678911820864-e5d4c0c8f6bb",price:21990000},
-{name:"Xiaomi 14",brand:"xiaomi",img:"https://images.unsplash.com/photo-1706889338747-9a61c45b7c1d",price:19990000},
-{name:"Oppo Find X5",brand:"oppo",img:"https://images.unsplash.com/photo-1640622333549-8f9c0a1b1e5b",price:18990000},
-{name:"Vivo V27",brand:"vivo",img:"https://images.unsplash.com/photo-1621570078210-7e7cbb18ce19",price:10990000}
+const data = [
+{name:"iPhone 15 Pro Max",brand:"iphone",img:"https://picsum.photos/200?1",price:34990000,desc:"Chip A17 Pro, camera xịn"},
+{name:"Samsung S24 Ultra",brand:"samsung",img:"https://picsum.photos/200?2",price:32990000,desc:"Bút S-Pen, hiệu năng mạnh"},
+{name:"Xiaomi 14",brand:"xiaomi",img:"https://picsum.photos/200?3",price:19990000,desc:"Giá tốt, hiệu năng cao"},
+{name:"Oppo Reno 8",brand:"oppo",img:"https://picsum.photos/200?4",price:9990000,desc:"Camera đẹp"},
+{name:"Vivo V27",brand:"vivo",img:"https://picsum.photos/200?5",price:10990000,desc:"Thiết kế đẹp"}
 ];
 
-function format(price){
-return price.toLocaleString('vi-VN') + ' đ';
+let cartData = [];
+let current = null;
+
+function format(p){
+return p.toLocaleString('vi-VN')+" đ";
 }
 
 function show(list){
-document.getElementById('list').innerHTML=list.map(p=>`
-<div class='card'>
-<img src='${p.img}' onclick='detail("${p.name}")'>
+document.getElementById("list").innerHTML = list.map(p=>`
+<div class="card">
+<img src="${p.img}" onclick="detail('${p.name}')">
 <h4>${p.name}</h4>
-<p>${format(p.price)}</p>
-<button onclick='alert("Đã thêm vào giỏ")'>Thêm</button>
-<button onclick='buy()'>Mua</button>
-</div>`).join('');
+<p class="price">${format(p.price)}</p>
+<button onclick="add('${p.name}')">Thêm</button>
+</div>
+`).join('');
 }
 
 function filter(type){
-if(type==='all') show(data);
+if(type==="all") show(data);
 else show(data.filter(p=>p.brand===type));
 }
 
-/* CHI TIẾT */
 function detail(name){
-let sp=data.find(p=>p.name===name);
-document.getElementById("modal").style.display="block";
-document.getElementById("modalImg").src=sp.img;
-document.getElementById("modalName").innerText=sp.name;
-document.getElementById("modalPrice").innerText=format(sp.price);
+let p = data.find(x=>x.name===name);
+current = p;
+
+modal.style.display="block";
+mImg.src = p.img;
+mName.innerText = p.name;
+mPrice.innerText = format(p.price);
+mDesc.innerText = p.desc;
 }
 
 function closeModal(){
-document.getElementById("modal").style.display="none";
+modal.style.display="none";
 }
 
-/* MUA */
-function buy(){
-let name=prompt("Tên:");
-let phone=prompt("SĐT:");
-let address=prompt("Địa chỉ:");
-if(name && phone && address){
+function add(name){
+let p = data.find(x=>x.name===name);
+cartData.push(p);
+renderCart();
+}
+
+function addCart(){
+cartData.push(current);
+renderCart();
+closeModal();
+}
+
+function renderCart(){
+cart.innerHTML = cartData.map(p=>`<p>${p.name}</p>`).join('');
+let totalPrice = cartData.reduce((s,p)=>s+p.price,0);
+total.innerText = "Tổng: " + format(totalPrice);
+}
+
+function checkout(){
 alert("Đặt hàng thành công!");
-}
-}
-
-/* SEARCH */
-document.getElementById('search').oninput=e=>{
-let val=e.target.value.toLowerCase();
-show(data.filter(p=>p.name.toLowerCase().includes(val)));
+cartData = [];
+renderCart();
 }
 
-/* DARK MODE */
+document.getElementById("search").oninput = e=>{
+let v = e.target.value.toLowerCase();
+show(data.filter(p=>p.name.toLowerCase().includes(v)));
+}
+
 function toggleDark(){
-document.body.classList.toggle('dark');
+document.body.classList.toggle("dark");
 }
 
 show(data);
