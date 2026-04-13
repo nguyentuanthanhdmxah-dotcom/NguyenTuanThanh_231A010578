@@ -1,0 +1,12 @@
+body{font-family:Arial;margin:0;transition:0.3s}
+.dark{background:#121212;color:white}
+header{display:flex;gap:10px;padding:10px;background:#2196f3;color:white}
+.sidebar{position:fixed;left:-200px;top:0;width:200px;height:100%;background:#eee;transition:0.3s}
+.sidebar.show{left:0}
+.products{margin-left:10px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:10px}
+.card{border:1px solid #ccc;padding:10px;transition:0.3s}
+.card:hover{transform:scale(1.05)}
+img{width:100%;transition:0.3s}
+.card:hover img{transform:scale(1.1)}
+button{padding:5px;margin-top:5px}
+.cart{position:fixed;right:0;top:0;width:200px;background:#fff;height:100%;overflow:auto}
