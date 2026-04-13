@@ -23,7 +23,7 @@ display:flex;
 align-items:center;
 gap:15px;
 padding:12px 20px;
-background:#007bff;
+background:linear-gradient(90deg,#007bff,#00c6ff);
 color:white;
 }
 
@@ -33,12 +33,13 @@ border-radius:6px;
 border:none;
 }
 
-/* MENU */
-.menu{
+/* ICON */
+.menu,.cart-btn{
 font-size:22px;
 cursor:pointer;
 }
 
+/* MENU */
 .sidebar{
 position:fixed;
 left:-220px;
@@ -49,6 +50,7 @@ background:white;
 box-shadow:2px 0 10px rgba(0,0,0,0.2);
 padding:20px;
 transition:0.3s;
+border-right:2px solid #eee;
 }
 
 .menu:hover + .sidebar,
@@ -79,11 +81,13 @@ background:white;
 border-radius:12px;
 padding:15px;
 text-align:center;
+border:1px solid #ddd;
 box-shadow:0 3px 10px rgba(0,0,0,0.1);
 transition:0.3s;
 }
 .card:hover{
 transform:translateY(-6px);
+box-shadow:0 6px 15px rgba(0,0,0,0.2);
 }
 .card img{
 width:100%;
@@ -109,16 +113,21 @@ button:hover{
 background:#0056b3;
 }
 
-/* CART */
+/* GIỎ HÀNG ẨN */
 .cart{
 position:fixed;
-right:0;
+right:-260px;
 top:0;
 width:260px;
 height:100%;
 background:white;
 padding:15px;
 box-shadow:-2px 0 10px rgba(0,0,0,0.2);
+transition:0.3s;
+z-index:1000;
+}
+.cart.show{
+right:0;
 }
 
 /* MODAL */
