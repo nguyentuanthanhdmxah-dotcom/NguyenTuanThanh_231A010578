@@ -1,22 +1,34 @@
 const data = [
-{name:"iPhone 15 Pro Max",brand:"iphone",img:"https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-15-pro-max.jpg",price:34990000,desc:"A17 Pro"},
-{name:"iPhone 14 Pro",brand:"iphone",img:"https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-14-pro.jpg",price:27990000,desc:"Camera xịn"},
-{name:"iPhone 13",brand:"iphone",img:"https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13.jpg",price:17990000,desc:"Ổn định"},
-
-{name:"Samsung S24 Ultra",brand:"samsung",img:"https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s24-ultra-5g.jpg",price:32990000,desc:"S Pen"},
-{name:"Samsung S23",brand:"samsung",img:"https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s23.jpg",price:21990000,desc:"Mạnh"},
-{name:"Samsung A54",brand:"samsung",img:"https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-a54.jpg",price:8990000,desc:"Giá tốt"},
-
-{name:"Xiaomi 14",brand:"xiaomi",img:"https://fdn2.gsmarena.com/vv/bigpic/xiaomi-14.jpg",price:19990000,desc:"Hiệu năng"},
-{name:"Xiaomi 13",brand:"xiaomi",img:"https://fdn2.gsmarena.com/vv/bigpic/xiaomi-13.jpg",price:15990000,desc:"Ổn"},
-{name:"Xiaomi Note 12",brand:"xiaomi",img:"https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-12.jpg",price:6990000,desc:"Rẻ"},
-
-{name:"Oppo Find X5",brand:"oppo",img:"https://fdn2.gsmarena.com/vv/bigpic/oppo-find-x5.jpg",price:18990000,desc:"Đẹp"},
-{name:"Oppo Reno 8",brand:"oppo",img:"https://fdn2.gsmarena.com/vv/bigpic/oppo-reno8.jpg",price:9990000,desc:"Camera"},
-
-{name:"Vivo V27",brand:"vivo",img:"https://fdn2.gsmarena.com/vv/bigpic/vivo-v27.jpg",price:10990000,desc:"Thiết kế"},
-{name:"Realme GT",brand:"realme",img:"https://fdn2.gsmarena.com/vv/bigpic/realme-gt.jpg",price:8990000,desc:"Gaming"},
-{name:"Nokia G60",brand:"nokia",img:"https://fdn2.gsmarena.com/vv/bigpic/nokia-g60.jpg",price:5990000,desc:"Bền"}
+{
+name:"iPhone 15 Pro Max",
+brand:"iphone",
+img:"https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-15-pro-max.jpg",
+price:34990000,
+desc:"Chip A17 Pro, camera 48MP",
+ram:"8GB",
+rom:"256GB",
+screen:"6.7 inch OLED"
+},
+{
+name:"Samsung S24 Ultra",
+brand:"samsung",
+img:"https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s24-ultra-5g.jpg",
+price:32990000,
+desc:"Snapdragon 8 Gen 3, S-Pen",
+ram:"12GB",
+rom:"256GB",
+screen:"6.8 inch AMOLED"
+},
+{
+name:"Xiaomi 14",
+brand:"xiaomi",
+img:"https://fdn2.gsmarena.com/vv/bigpic/xiaomi-14.jpg",
+price:19990000,
+desc:"Camera Leica",
+ram:"12GB",
+rom:"256GB",
+screen:"6.36 inch AMOLED"
+}
 ];
 
 let cartData = [];
@@ -27,6 +39,7 @@ return p.toLocaleString('vi-VN')+" đ";
 }
 
 function show(list){
+list = list.length ? list : data;
 document.getElementById("list").innerHTML = list.map(p=>`
 <div class="card">
 <img src="${p.img}" onclick="detail('${p.name}')">
@@ -50,7 +63,13 @@ modal.style.display="block";
 mImg.src = p.img;
 mName.innerText = p.name;
 mPrice.innerText = format(p.price);
-mDesc.innerText = p.desc;
+
+mDesc.innerHTML = `
+<p>${p.desc}</p>
+<p>📱 Màn hình: ${p.screen}</p>
+<p>⚡ RAM: ${p.ram}</p>
+<p>💾 Bộ nhớ: ${p.rom}</p>
+`;
 }
 
 function closeModal(){
@@ -76,7 +95,11 @@ total.innerText = "Tổng: " + format(totalPrice);
 }
 
 function toggleCart(){
-cartBox.classList.toggle("show");
+cartModal.style.display="block";
+}
+
+function closeCart(){
+cartModal.style.display="none";
 }
 
 function checkout(){
@@ -101,7 +124,7 @@ alert("Đặt hàng thành công!");
 cartData=[];
 renderCart();
 orderModal.style.display="none";
-cartBox.classList.remove("show");
+cartModal.style.display="none";
 error.innerText="";
 }
 
