@@ -1,4 +1,5 @@
 const data = [
+
 {
 name:"iPhone 15 Pro Max",
 brand:"iphone",
@@ -9,16 +10,62 @@ ram:"8GB",
 rom:"256GB",
 screen:"6.7 inch OLED"
 },
+
+{
+name:"iPhone 14 Pro",
+brand:"iphone",
+img:"https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-14-pro.jpg",
+price:27990000,
+desc:"Camera 48MP, Dynamic Island",
+ram:"6GB",
+rom:"128GB",
+screen:"6.1 inch OLED"
+},
+
+{
+name:"iPhone 13",
+brand:"iphone",
+img:"https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13.jpg",
+price:17990000,
+desc:"Chip A15 Bionic",
+ram:"4GB",
+rom:"128GB",
+screen:"6.1 inch OLED"
+},
+
 {
 name:"Samsung S24 Ultra",
 brand:"samsung",
 img:"https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s24-ultra-5g.jpg",
 price:32990000,
-desc:"Snapdragon 8 Gen 3, S-Pen",
+desc:"Snapdragon 8 Gen 3, S Pen",
 ram:"12GB",
 rom:"256GB",
 screen:"6.8 inch AMOLED"
 },
+
+{
+name:"Samsung S23",
+brand:"samsung",
+img:"https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s23.jpg",
+price:21990000,
+desc:"Hiệu năng mạnh",
+ram:"8GB",
+rom:"256GB",
+screen:"6.1 inch AMOLED"
+},
+
+{
+name:"Samsung A54",
+brand:"samsung",
+img:"https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-a54.jpg",
+price:8990000,
+desc:"Giá tốt, pin trâu",
+ram:"8GB",
+rom:"128GB",
+screen:"6.4 inch AMOLED"
+},
+
 {
 name:"Xiaomi 14",
 brand:"xiaomi",
@@ -28,7 +75,63 @@ desc:"Camera Leica",
 ram:"12GB",
 rom:"256GB",
 screen:"6.36 inch AMOLED"
+},
+
+{
+name:"Xiaomi 13",
+brand:"xiaomi",
+img:"https://fdn2.gsmarena.com/vv/bigpic/xiaomi-13.jpg",
+price:15990000,
+desc:"Hiệu năng ổn định",
+ram:"8GB",
+rom:"256GB",
+screen:"6.36 inch AMOLED"
+},
+
+{
+name:"Oppo Find X5",
+brand:"oppo",
+img:"https://fdn2.gsmarena.com/vv/bigpic/oppo-find-x5.jpg",
+price:18990000,
+desc:"Thiết kế đẹp",
+ram:"8GB",
+rom:"256GB",
+screen:"6.55 inch AMOLED"
+},
+
+{
+name:"Oppo Reno 8",
+brand:"oppo",
+img:"https://fdn2.gsmarena.com/vv/bigpic/oppo-reno8.jpg",
+price:9990000,
+desc:"Camera chân dung",
+ram:"8GB",
+rom:"128GB",
+screen:"6.4 inch AMOLED"
+},
+
+{
+name:"Vivo V27",
+brand:"vivo",
+img:"https://fdn2.gsmarena.com/vv/bigpic/vivo-v27.jpg",
+price:10990000,
+desc:"Thiết kế thời trang",
+ram:"8GB",
+rom:"256GB",
+screen:"6.78 inch AMOLED"
+},
+
+{
+name:"Realme GT",
+brand:"realme",
+img:"https://fdn2.gsmarena.com/vv/bigpic/realme-gt.jpg",
+price:8990000,
+desc:"Gaming mạnh",
+ram:"8GB",
+rom:"128GB",
+screen:"6.43 inch AMOLED"
 }
+
 ];
 
 let cartData = [];
