@@ -31,7 +31,7 @@
 <!-- SẢN PHẨM -->
 <div class="products" id="list"></div>
 
-<!-- MODAL -->
+<!-- MODAL CHI TIẾT -->
 <div class="modal" id="modal">
 <div class="modal-content">
 <span onclick="closeModal()">✖</span>
@@ -40,6 +40,19 @@
 <p id="mPrice"></p>
 <p id="mDesc"></p>
 <button onclick="addCart()">Thêm vào giỏ</button>
+</div>
+</div>
+
+<!-- FORM ĐẶT HÀNG -->
+<div class="modal" id="orderModal">
+<div class="modal-content">
+<h3>Thông tin đặt hàng</h3>
+<input id="name" placeholder="Nhập tên">
+<input id="phone" placeholder="Nhập SĐT">
+<input id="address" placeholder="Nhập địa chỉ">
+<p id="error" style="color:red"></p>
+<button onclick="submitOrder()">Xác nhận</button>
+<button onclick="closeOrder()">Hủy</button>
 </div>
 </div>
 
