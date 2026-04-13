@@ -4,7 +4,7 @@ font-family:Arial;
 background:#f1f1f1;
 }
 
-/* DARK */
+/* DARK MODE */
 .dark{
 background:#121212;
 color:white;
@@ -33,9 +33,20 @@ border:none;
 flex:1;
 }
 
+/* ICON */
 .menu,.cart-btn{
 cursor:pointer;
 font-size:20px;
+}
+
+/* 🔥 SỐ GIỎ HÀNG */
+#count{
+background:red;
+color:white;
+padding:2px 6px;
+border-radius:50%;
+font-size:12px;
+margin-left:4px;
 }
 
 /* MENU */
@@ -74,6 +85,7 @@ transition:0.3s;
 }
 .card:hover{
 transform:translateY(-5px);
+box-shadow:0 6px 15px rgba(0,0,0,0.2);
 }
 .card img{
 width:100%;
@@ -95,6 +107,9 @@ background:#007bff;
 color:white;
 cursor:pointer;
 }
+button:hover{
+background:#0056b3;
+}
 
 /* MODAL */
 .modal{
@@ -107,7 +122,7 @@ top:0;
 left:0;
 }
 
-/* 🔥 QUAN TRỌNG: THU NHỎ */
+/* POPUP */
 .modal-content{
 background:white;
 width:320px;
@@ -115,18 +130,17 @@ margin:80px auto;
 padding:15px;
 border-radius:10px;
 text-align:center;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
 }
 
-/* 🔥 MODAL CHI TIẾT NHỎ HƠN */
+/* CHI TIẾT NHỎ GỌN */
 .modal-content.small{
 width:280px;
 padding:12px;
 }
 
-/* 🔥 ẢNH NHỎ LẠI */
 .modal-content.small img{
 width:180px;
-height:auto;
 }
 
 /* INPUT */
@@ -134,4 +148,6 @@ input{
 width:90%;
 padding:8px;
 margin:5px 0;
+border-radius:5px;
+border:1px solid #ccc;
 }
